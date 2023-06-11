@@ -1,0 +1,319 @@
+@import url(https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Themes/DiscordRecolor/DiscordRecolor.theme.css);
+@import url(https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Themes/EmojiReplace/EmojiReplace.theme.css);
+
+
+/*CSS by TOMOZLOMO*/
+
+/*Verical golive screen selection | scr share w innym ustawieniu*/
+.sourceContainer-1uqUbz {
+    flex-direction: column;
+}
+.sourceName-3Wf8QG {
+    width: unset;
+}
+.tile-3POX2m > .flex-2S1XBF {
+    flex-direction: row;
+    justify-content: start;
+}
+.tile-3POX2m > .flex-2S1XBF > .flex-2S1XBF {
+    flex: unset !important;
+    margin-right: 16px;
+}
+
+/*Animated PFP for only you*/
+[src^="https://cdn.discordapp.com/avatars/--929672905313374208/"] {
+    content: url(https://cdn.discordapp.com/attachments/910630309559693353/1082614912204943461/original_52.gif);
+}
+
+/*removes the "Nitro" tab in the "Direct Messages" page*/
+.linkButton-2NshQj > a[href="/store"] {
+    display: none;
+}
+
+/*Pulverize the Other active threads | wypierdala gowno od watkow*/
+.popout-TdhJ6Z {
+  display: none
+}
+
+/*Vencord green color UPDATE button | zielony update guzior*/
+.vc-notification-root {
+  background-color: #248046 !important;
+}
+.vc-notification-close-btn {
+  color: white !important;
+}
+
+/*Remodel button from ReadAllNotifications | remodel RAN*/
+.button-ejjZWC.lookFilled-1H2Jvj.colorBrand-2M3O3N.sizeMin-3Yqxk5.grow-2T4nbg {
+    border-radius: 10px;
+    font-size: 10px;
+    margin-left: 12px !important;
+    text-transform: lowercase;
+}
+
+/*Remodel button from RAN. (^addon)*/
+.contents-3NembX {
+    padding: 0 4px 0 4px;
+}
+
+/*Show FullBIO | pokazuje all bio*/
+[class|=userPopoutInner] [style*="-webkit-line-clamp"] {
+    -webkit-line-clamp: unset !important;
+}
+
+/*Remove Invite Button next to channel name | wypierdala invite button obok kanałow*/
+.actionIcon-2sw4Sl {
+    display: none;
+}
+
+/*Literally only reveal the timestamp on messages when you hover over the place | pojawiajaca sie data nad message*/
+[class*=timestampInline-] {
+  opacity: 0;
+  transition: 0.2s opacity ease-in-out;
+}
+
+[class^=message-]:hover [class*=timestampInline-] {
+  opacity: 1;
+}
+
+/* Re-round Spotify Status Images | nie dziala chyba xd*/
+[class^=assetsLargeImageSpotify-]{border-radius:8px;}
+
+/*Autohide member list at a breakpoint | idk*/
+@media (max-width: 1200px) {
+  aside[class*="membersWrap-"] { display: none; }
+}
+
+/* Comfy-Style Spotify Player
+ * Kanged and modified code from https://github.com/Comfy-Themes/Discord
+ */
+#vc-spotify-player {
+  --spotify-wave-width: 240px;
+  --spotify-vencord-color: #8d8beb;
+  --spotify-vencord-text: var(--background-primary);
+}
+@keyframes spotifywave {
+  0% {
+    -webkit-mask-position-x: var(--spotify-wave-width);
+  }
+
+  100% {
+    -webkit-mask-position-x: 0;
+  }
+}
+#vc-spotify-player::before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  z-index: 1;
+  width: var(--spotify-wave-width);
+  margin-top: -29px;
+  left: 0;
+  background: var(--spotify-vencord-color);
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="25" viewBox="0 0 284 25"><path d="M283.999 15.2776C228.798 15.2776 211.243 -0.0317305 140.048 -0.000164877C69.0475 -0.000164877 51.2975 15.2776 8.58307e-06 15.2776V24.9998H284C284 24.9998 283.999 18.9392 283.999 15.2776Z"/></svg>');
+  animation: spotifywave 8s linear infinite;
+  animation-delay: 0s;
+  opacity: 1;
+}
+#vc-spotify-player#vc-spotify-player  {
+  background: linear-gradient(var(--spotify-vencord-color) 20%, var(--bg-overlay-1, var(--background-secondary-alt)));
+  border-bottom: none;
+}
+#vc-spotify-song-title#vc-spotify-song-title,
+.vc-spotify-ellipoverflow.vc-spotify-ellipoverflow,
+.vc-spotify-artist.vc-spotify-artist,
+.vc-spotify-album.vc-spotify-album
+/* , .vc-spotify-time-right, .vc-spotify-time-left */  {
+  color: var(--spotify-vencord-text);
+}
+#vc-spotify-player [class*="bar-"] {
+  background: hsl(var(--primary-700-hsl)/0.3);
+}
+#vc-spotify-player [class*="barFill"] {
+  background: var(--spotify-vencord-color);
+}
+[class*=wrapper-]:not(:empty) + #vc-spotify-player {
+  margin-top: 27px;
+}
+[class*=panels-] [class*=wrapper-] [class*=container-] {
+  border-bottom: none;
+}
+
+/*show folder names by ddyo#9254*/
+[data-list-id=guildsnav]
+[class*=expandedFolderBackground]+[class*=listItem]
+[data-dnd-name][draggable] {
+    margin: 0 auto;
+}
+[data-list-id=guildsnav]
+[class*=expandedFolderBackground]+[class*=listItem]
+[data-dnd-name][draggable] div:only-child {
+    margin: 0 auto;
+}
+[data-list-id=guildsnav]
+[class*=expandedFolderBackground]+[class*=listItem]
+[data-dnd-name][draggable]:before {
+    content: attr(data-dnd-name);
+    color: #fff;
+    z-index:1;
+    font-weight: bold;
+    font-size:14px;
+    display: block;
+    margin: 0 auto;
+    min-width:100%;
+    padding-top: 10px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+/* Hide Super Reaction Button */
+[id="message-add-reaction-1"] {
+  display: none;
+}
+
+[class*="field"]:not(:first-child) > [class*="constrainedRow"] > div > div {
+    filter: blur(5px);
+    transition: filter 0.2s ease-in-out;
+}
+[class*="field"]:not(:first-child) > [class*="constrainedRow"] > div > div:hover {
+    filter: none;
+}
+div:has(> a[class*="phoneRevealer"]) {
+    display: none;
+}
+
+/*Changes the owner tag background to the color of the owner crown and removes 
+the crown itself in the members list
+Use with ForceOwnerCrown[x] and, obviously, MoreUserTags*/
+
+span[data-tag="owner"] {
+  background-color: #f09f19; /* złoty */
+  color: black;
+}
+
+span[data-tag="admin"] {
+  background-color: #c0c0c0; /* srebrny */
+  color: black;
+}
+
+span[data-tag="staff"] {
+  background-color: #88540b; /* brązowy */
+  color: white;
+}
+
+span[data-tag="mod"] {
+  background-color: #6e7279; /* szary */
+  color: white;
+}
+
+span[data-tag="vc mod"] {
+  background-color: #0b6623; /* zielony */
+  color: white;
+}
+
+.ownerIcon-255uKo {
+  display: none;
+}
+
+/*delete super reactions out of existence*/
+
+#message-add-reaction-1,
+#super-reaction-picker-tab,
+[class^="burstEmojiSection-"],
+[class^="reactionDefault-"]:has(> div[style*="color:"]),
+[class^="reactionSelected-"]:has(> div[style*="color:"]),
+[id^="message-accessories"] > [class^="reactions-"] > :last-child,
+[class^="reactButtons-"] > :last-child, 
+[class^="reactions-"] > div > [style*="background:"] {
+    display: none !important;
+}
+
+/*Dodaje gwiazdke przy ulubionych wlepach*/
+
+:is(#message-favorite, #message-unfavorite) [class|=label]::after {
+    display: inline-block;
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: var(--interactive-normal);
+    -webkit-mask: url(/assets/141d49436743034a59dec6bd5618675d.svg);
+    mask: url(/assets/141d49436743034a59dec6bd5618675d.svg);
+    position: absolute;
+    right: 8px;
+}
+
+/*Linki real*/
+
+@import url(https://minidiscordthemes.github.io/Snippets/ShowOriginalLink/ShowOriginalLink.css);
+
+/*Większe pole na motywy z vencorda / Increase height of Themes textarea*/
+
+.vc-settings-theme-links {
+    max-height: unset;
+    height: 10rem;
+}
+
+/*makes the image for the vencord toolbox plugin more like a 
+discord svg and not just the logo copy and pasted*/
+
+[src="https://raw.githubusercontent.com/Vencord/Website/main/public/assets/favicon.png"] {
+  content: url(https://i.imgur.com/8M1W2KH.gif);
+  width: 24px;
+  height: 24px;
+}
+
+
+/*titlebar background (pasek u gory ladny kurwa ten)*/
+
+.bg-1QIAus {
+  background-image: url("https://i.imgur.com/3jQ5Ufn.gif"); /* source: https://vimeo.com/309240312 */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+/*New folders icon essa*/
+
+path[d="M20 7H12L10.553 5.106C10.214 4.428 9.521 4 8.764 4H3C2.447 4 2 4.447 2 5V19C2 20.104 2.895 21 4 21H20C21.104 21 22 20.104 22 19V9C22 7.896 21.104 7 20 7Z"] {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    d: path("m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2");
+}
+
+
+/* glowing current speaker rings */
+.avatarSpeaking-2pCGrZ {
+  border: 2.5px solid rgb(44, 200, 106);
+  box-shadow: 0px 0px 6px rgb(0, 16, 3),  0px 0px 50px rgb(44, 200, 106),  0px 0px 6px rgba(0, 0, 0, 0.953);
+  border-radius: 16px;
+  margin-left: 6px;
+  margin-top: 1px;
+}
+
+
+/* Centered usernames */
+.usernameSection-3FppkT,
+.container-3g15px {
+    text-align: center;
+}
+
+.customStatus-19KW6v {
+    display: flex;
+}
+
+.nameTag-35jqbZ,
+.customStatus-19KW6v,
+.tabBar-2hXqzU {
+    justify-content: center;
+}
+
+/* Members tab */
+.membersGroup-2eiWxl {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1px; /* większy odstęp */
+  font-size: 14px; /* powiększony tekst */
+}
+
+/* - */
