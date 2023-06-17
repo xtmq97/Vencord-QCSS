@@ -316,6 +316,18 @@ path[d="M20 7H12L10.553 5.106C10.214 4.428 9.521 4 8.764 4H3C2.447 4 2 4.447 2 5
   font-size: 14px; /* powiększony tekst */
 }
 
-/*d*/
+/*Just makes categorys slightly bigger*/
+d.container-q97qHp {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Fix ping & channel typing indicator alignment */ 
+.content-yjf30S .content-1gYQeQ {
+    align-items: center;
+}
+.content-yjf30S .children-1MGS9G {
+  padding-top: 0;
+}
 
 /* - */
