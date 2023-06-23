@@ -324,6 +324,15 @@ path[d="M20 7H12L10.553 5.106C10.214 4.428 9.521 4 8.764 4H3C2.447 4 2 4.447 2 5
   padding-top: 0;
 }
 
+@use "src/badges.css";
+// @use "src/whitebadges.css";
+:root {
+  --badge-size: 22px; //discord defualt = 18px, theme defualt = 22px;
+  --badge-margin: 1.5px; //discord default = 2px, theme defualt = 1.5px
+  --badges-everywhere-size: 15px; //defualt = 15px
+}
+
+
 /**/
 
 /* - */
